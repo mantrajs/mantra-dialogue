@@ -2,6 +2,7 @@ import React from 'react';
 
 import authComposer from '../../_users/composers/account/auth.jsx';
 import _userControls from './userControls.jsx';
+import AppConfig from '/client/configs/app.js';
 
 const UserControls = authComposer(_userControls);
 
@@ -23,7 +24,7 @@ export default React.createClass({
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="/">mantra<strong>Kickstarter</strong></a>
+              <a className="navbar-brand" href="/">{AppConfig.name}</a>
             </div>
 
 
