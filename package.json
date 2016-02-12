@@ -32,9 +32,8 @@
     "domready": "^1.0.8",
     "react": ">=0.14.3 <=0.15.0",
     "react-dom": ">=0.14.3 <=0.15.0",
-    "react-komposer": "1.x.x",
-    "react-simple-di": "1.x.x",
-    "react-mounter": "1.x.x"
+    "mantra-core": "^1.2.0",
+    "react-mounter": "^1.0.0"
 
     ,"classnames": "2.2.1"
     ,"lodash":"3.10.1"

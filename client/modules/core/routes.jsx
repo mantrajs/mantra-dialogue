@@ -1,19 +1,17 @@
 import React from 'react';
-import {FlowRouter} from 'meteor/kadira:flow-router';
 import {mount} from 'react-mounter';
 
 import {Layout} from '/client/configs/theme.jsx';
 //import Links from '../../_home/components/links.jsx';
 
-import MainLayout from '/client/modules/core/components/layout.main.jsx';
-import PostList from '/client/modules/core/containers/postlist';
-import Post from '/client/modules/core/containers/post';
-import NewPost from '/client/modules/core/containers/newpost';
+import MainLayout from './components/main_layout.jsx';
+import PostList from './containers/postlist';
+import Post from './containers/post';
+import NewPost from './containers/newpost';
 
-export default function (injectDeps) {
+export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);
 
-  // Move these as a module and call this from a main file
   FlowRouter.route('/posts', {
     name: 'posts.list',
     action() {
