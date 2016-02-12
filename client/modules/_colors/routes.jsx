@@ -1,18 +1,17 @@
 import React from 'react';
-import {FlowRouter} from 'meteor/kadira:flow-router';
 import {mount} from 'react-mounter';
 
 import {Layout} from '/client/configs/theme.jsx';
-import Links from '../../_home/components/links.jsx';
-// import Simple from '../../_home/components/simple.jsx';
+import Links from '../_home/components/links.jsx';
+// import Simple from '../_home/components/simple.jsx';
 
-import ColorsList from '../components/colors/collection.jsx';
-import ColorsView from '../components/colors/single.jsx';
-import ColorsAdd from '../components/colors/add.jsx';
-import ColorsEdit from '../components/colors/edit.jsx';
+import ColorsList from './components/colors/collection.jsx';
+import ColorsView from './components/colors/single.jsx';
+import ColorsAdd from './components/colors/add.jsx';
+import ColorsEdit from './components/colors/edit.jsx';
 
 
-export default (injectDeps) => {
+export default function (injectDeps, {FlowRouter}) {
 
   const LayoutCtx = injectDeps(Layout);
 

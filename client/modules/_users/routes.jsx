@@ -1,27 +1,25 @@
 import React from 'react';
-import {FlowRouter} from 'meteor/kadira:flow-router';
 import {mount} from 'react-mounter';
-import {Meteor} from 'meteor/meteor';
 
 import {Layout} from '/client/configs/theme.jsx';
-import Links from '../../_home/components/links.jsx';
-// import Simple from '../../_home/components/simple.jsx';
+import Links from '../_home/components/links.jsx';
+// import Simple from '../_home/components/simple.jsx';
 
-import Login from '../components/login/wrapper.jsx';
-import Register from '../components/register/wrapper.jsx';
-import Password from '../components/password/wrapper.jsx';
+import Login from './components/login/wrapper.jsx';
+import Register from './components/register/wrapper.jsx';
+import Password from './components/password/wrapper.jsx';
 
-import Account from '../components/account/wrapper.jsx';
-import Profile from '../components/profile/wrapper.jsx';
+import Account from './components/account/wrapper.jsx';
+import Profile from './components/profile/wrapper.jsx';
 
-import UsersCollection from '../components/users/collection.jsx';
-import UsersAdd from '../components/users/add.jsx';
-import UsersSingle from '../components/users/single.jsx';
-import UsersEdit from '../components/users/edit.jsx';
+import UsersCollection from './components/users/collection.jsx';
+import UsersAdd from './components/users/add.jsx';
+import UsersSingle from './components/users/single.jsx';
+import UsersEdit from './components/users/edit.jsx';
 
 
 
-export default (injectDeps) => {
+export default function (injectDeps, {FlowRouter}) {
 
   const LayoutCtx = injectDeps(Layout);
 

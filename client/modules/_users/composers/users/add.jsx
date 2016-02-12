@@ -1,5 +1,4 @@
-import {useDeps} from 'react-simple-di';
-import {composeWithTracker, composeAll} from 'react-komposer';
+import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 
 export const addComposer = ({context, clearErrors}, onData) => {
   const {LocalState} = context();
