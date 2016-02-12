@@ -11,7 +11,7 @@ describe('components.postlist', () => {
 
   it('should list given number of items', () => {
     const el = shallow(<PostList posts={posts}/>);
-    expect(el.find('li').length).to.be.equal(posts.length);
+    expect(el.find('tr').length).to.be.equal(posts.length + 1);
   });
 
   it('should list post title for each item', () => {
