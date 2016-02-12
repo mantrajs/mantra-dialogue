@@ -37,7 +37,7 @@ export default function () {
       // XXX: Do some user authorization
 
       let record = _colors.findOne(_id);
-      const allowedFields = ['title', 'content'];
+      const allowedFields = [ 'title', 'content' ];
       allowedFields.forEach(key => record.set(key, data[key]));
       record.save(allowedFields);
 

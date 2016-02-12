@@ -19,7 +19,7 @@ import UsersEdit from './components/users/edit.jsx';
 
 
 
-export default function (injectDeps, {FlowRouter}) {
+export default function (injectDeps, {Meteor, FlowRouter}) {
 
   const LayoutCtx = injectDeps(Layout);
 
@@ -170,4 +170,4 @@ export default function (injectDeps, {FlowRouter}) {
       });
     }
   });
-};
+}

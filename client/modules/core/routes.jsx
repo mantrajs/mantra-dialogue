@@ -2,9 +2,9 @@ import React from 'react';
 import {mount} from 'react-mounter';
 
 import {Layout} from '/client/configs/theme.jsx';
-//import Links from '../../_home/components/links.jsx';
+// import Links from '../../_home/components/links.jsx';
 
-import MainLayout from './components/main_layout.jsx';
+// import MainLayout from './components/main_layout.jsx';
 import PostList from './containers/postlist';
 import Post from './containers/post';
 import NewPost from './containers/newpost';
