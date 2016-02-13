@@ -2,7 +2,7 @@ import React from 'react';
 import {mount} from 'react-mounter';
 
 import {Layout} from '/client/configs/theme.jsx';
-// import Links from '../../_home/components/links.jsx';
+import Links from '../_home/components/links.jsx';
 
 // import MainLayout from './components/main_layout.jsx';
 import PostList from './containers/postlist';
@@ -16,7 +16,8 @@ export default function (injectDeps, {FlowRouter}) {
     name: 'posts.list',
     action() {
       mount(MainLayoutCtx, {
-        content: () => (<PostList />)
+        content: () => (<PostList />),
+        links: () => (<Links />)
       });
     }
   });
@@ -25,7 +26,8 @@ export default function (injectDeps, {FlowRouter}) {
     name: 'posts.single',
     action({postId}) {
       mount(MainLayoutCtx, {
-        content: () => (<Post postId={postId}/>)
+        content: () => (<Post postId={postId}/>),
+        links: () => (<Links />)
       });
     }
   });
@@ -34,7 +36,8 @@ export default function (injectDeps, {FlowRouter}) {
     name: 'newpost',
     action() {
       mount(MainLayoutCtx, {
-        content: () => (<NewPost/>)
+        content: () => (<NewPost/>),
+        links: () => (<Links />)
       });
     }
   });
