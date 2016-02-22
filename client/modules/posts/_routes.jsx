@@ -1,28 +1,18 @@
 import React from 'react';
 import {mount} from 'react-mounter';
 
-import {Layout} from '/client/configs/dialogue_theme.jsx';
+import {Layout} from '/client/configs/theme.jsx';
 import Links from '../_home/components/links.jsx';
 
 // import MainLayout from './components/main_layout.jsx';
-import PostList from './containers/postlist.jsx';
-import Post from './containers/post';
-import NewPost from './containers/newpost';
+import PostList from './postlist.jsx';
+import Post from './post.jsx';
+import NewPost from './newpost.jsx';
 
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);
 
-  FlowRouter.route('/', {
-    name: 'posts.list',
-    action() {
-      mount(MainLayoutCtx, {
-        content: () => (<PostList />),
-        links: () => (<Links />)
-      });
-    }
-  });
-
-  FlowRouter.route('/table', {
+  FlowRouter.route('/posts', {
     name: 'posts.list',
     action() {
       mount(MainLayoutCtx, {

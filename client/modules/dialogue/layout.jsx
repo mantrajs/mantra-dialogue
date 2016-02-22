@@ -1,8 +1,7 @@
 import React from 'react';
 
-// import Navheader from './navigation2.jsx';
+//import Navheader from '/client/_flatly/components/navheader.jsx';
 import Navheader from './navheader.jsx';
-import Subnav from './navheader2.jsx';
 
 export default class extends React.Component {
 
@@ -11,11 +10,10 @@ export default class extends React.Component {
       <div>
 
         <Navheader>
-          {this.props.links ? this.props.links() : ''}
+          <ul className="nav navbar-nav">
+            <li><a href="/new-post">New Post</a></li>
+          </ul>
         </Navheader>
-        <Subnav>
-          {this.props.links ? this.props.links() : ''}
-        </Subnav>
 
         <div className="container">
 

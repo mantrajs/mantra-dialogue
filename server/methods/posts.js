@@ -15,7 +15,7 @@ export default function () {
 
       // XXX: Do some user authorization
       const createdAt = new Date();
-      const post = {_id, title, content, createdAt};
+      const post = {_id, title, content, createdAt, author: Meteor.userId()};
       Posts.insert(post);
     }
   });
