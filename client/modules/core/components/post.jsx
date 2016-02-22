@@ -1,5 +1,7 @@
 import React from 'react';
 import CommentList from '/client/modules/comments/containers/comment_list.js';
+//import linkify from 'linkify';
+//import linkifyHtml from 'linkify/html';
 
 const Post = ({post}) => (
   <div>
@@ -14,5 +16,9 @@ const Post = ({post}) => (
     </div>
   </div>
 );
+
+//{linkifyHtml(post.content, {
+//  defaultProtocol: 'https'
+//})}
 
 export default Post;
