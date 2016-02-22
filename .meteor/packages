@@ -12,9 +12,10 @@ session                 # Client-side reactive dictionary for your app
 jquery                  # Helpful client-side library
 tracker                 # Meteor's client-side reactive programming library
 
-standard-minifiers      # JS/CSS minifiers run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
-ecmascript              # Enable ECMAScript2015+ syntax in app code
+ecmascript
+#Enable ECMAScript2015+ syntax in app code
+#gadicc:ecmascript-hot@0.0.3-modules.7
 
 kadira:flow-router
 reactive-dict
@@ -30,3 +31,5 @@ jagi:astronomy-slug-behavior
 jagi:astronomy-timestamp-behavior
 jagi:astronomy-validators
 email
+standard-minifier-css
+standard-minifier-js

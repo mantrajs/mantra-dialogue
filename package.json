@@ -4,7 +4,6 @@
   "scripts": {
     "lint1": "eslint ./libs ./client ./server --ignore-pattern **/*.min.js  --ext .js --ext .jsx",
     "lint": "eslint ./libs ./client ./server --ignore-path .eslintignore  --ext .js --ext .jsx",
-
     "lintorg": "eslint ./libs ./client ./server --ext .js --ext .jsx",
     "lintfix": "npm run lint -- --fix",
     "testonly": "mocha client/**/tests/**/*.js --compilers js:babel-core/register",
@@ -29,19 +28,21 @@
     "sinon": "1.17.x"
   },
   "dependencies": {
+    "classnames": "2.2.1",
     "domready": "^1.0.8",
+    "formsy-react": "0.17.0",
+    "formsy-react-components": "0.6.6",
+    "linkify": "^0.2.1",
+    "lodash": "3.10.1",
+    "mantra-core": "^1.2.0",
+    "moment": "^2.11.2",
     "react": ">=0.14.3 <=0.15.0",
     "react-dom": ">=0.14.3 <=0.15.0",
-    "mantra-core": "^1.2.0",
-    "react-mounter": "^1.0.0"
-
-    ,"classnames": "2.2.1"
-    ,"lodash":"3.10.1"
-    ,"formsy-react": "0.17.0"
-    ,"formsy-react-components": "0.6.6"
-    ,"tcomb-form" : "0.8.1"
-    ,"react-tagsinput": "3.1.0"
-    ,"react-select": "1.0.0-beta8"
+    "react-mounter": "^1.0.0",
+    "react-select": "1.0.0-beta8",
+    "react-tagsinput": "3.1.0",
+    "react-transform-hmr": "^1.0.2",
+    "tcomb-form": "0.8.1"
   },
   "private": true
 }
