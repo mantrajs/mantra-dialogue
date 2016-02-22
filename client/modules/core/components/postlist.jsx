@@ -14,12 +14,14 @@ const PostList = ({posts}) => (
           {post.content}
         </h3>
       </a>
-      <p className="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
+      <p className="post-meta">Posted by <a href="#">Start Bootstrap</a>  </p>
     </div>
       ))}
 
   </div>
   </div>
 );
+
+//{post.createdAt.toString()}
 
 export default PostList;

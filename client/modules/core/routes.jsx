@@ -12,7 +12,17 @@ import NewPost from './containers/newpost';
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);
 
-  FlowRouter.route('/posts', {
+  FlowRouter.route('/', {
+    name: 'posts.list',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<PostList />),
+        links: () => (<Links />)
+      });
+    }
+  });
+
+  FlowRouter.route('/table', {
     name: 'posts.list',
     action() {
       mount(MainLayoutCtx, {

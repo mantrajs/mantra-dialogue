@@ -11,7 +11,7 @@ export default function (injectDeps, {FlowRouter}) {
   const LayoutCtx = injectDeps(Layout);
   // const LayoutCtx = injectDeps(context, actions)(Layout)
 
-  FlowRouter.route('/', {
+  FlowRouter.route('/about', {
     name: 'home',
     action() {
       mount(LayoutCtx, {

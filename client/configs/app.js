@@ -1,4 +1,4 @@
 export default {
-  name: 'kickstarter'
+  name: 'mantra dialogue'
 
 };
