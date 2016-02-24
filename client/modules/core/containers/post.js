@@ -23,7 +23,13 @@ export const composer = ({context, postId}, onData) => {
   }
 };
 
+export const depsMapper = (context, actions) => ({
+  like: actions.posts.like,
+  clearErrors: actions.posts.clearErrors,
+  context: () => context
+});
+
 export default composeAll(
   composeWithTracker(composer),
-  useDeps()
+  useDeps(depsMapper)
 )(Post);

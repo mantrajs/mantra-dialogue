@@ -9,8 +9,14 @@ const PostList = ({posts}) => {
 
         {posts.map(post => {
           console.log("post: " + JSON.stringify(post));
-          const content = (post.content.length <= 200) ? post.content : post.content + '...';
-          const author = (post.author) ? post.author : 'Anonymous';
+          const content = (post.content && post.content.length <= 200) ? post.content : post.content + '...';
+          var author;
+          if (post.author) {
+            //author = Meteor.users.findOne(post.author).username;
+            }
+            else {
+            author = 'Anonymous';
+            };
           return(
           <div className="post-preview">
             <a href={`/post/${post._id}`}>

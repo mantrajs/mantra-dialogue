@@ -17,6 +17,15 @@ export default {
     FlowRouter.go(`/post/${id}`);
   },
 
+  like({Meteor, LocalState, FlowRouter}, id) {
+    Meteor.call('posts.like', id, (err) => {
+      if (err) {
+        return LocalState.set('SAVING_ERROR', err.message);
+      }
+    });
+    //FlowRouter.go(`/post/${id}`);
+  },
+
   clearErrors({LocalState}) {
     return LocalState.set('SAVING_ERROR', null);
   }
