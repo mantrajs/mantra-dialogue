@@ -6,7 +6,8 @@ class LikesReplies extends React.Component {
     const {post} = this.props;
     return (
       <div>
-      <a href="#" onClick={this.likePost.bind(this)}>like</a> ({post.likeCount})
+
+      <a href="#" onClick={this.likePost.bind(this)}><i className="fa fa-heart-o"/> like</a> ({post.likeCount})
       </div>
     );
   }

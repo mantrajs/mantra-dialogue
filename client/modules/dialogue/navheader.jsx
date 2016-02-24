@@ -24,7 +24,7 @@ export default React.createClass({
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="/">{AppConfig.name}</a>
+              <a className="navbar-brand" href="/"><i className="fa fa-comments-o"/> {AppConfig.name}</a>
             </div>
 
 
