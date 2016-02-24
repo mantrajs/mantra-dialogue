@@ -18,6 +18,15 @@ export default {
     });
   },
 
+  like({Meteor, LocalState, FlowRouter}, id) {
+    console.log("called like")
+    Meteor.call('comments.like', id, (err) => {
+      if (err) {
+        return LocalState.set('SAVING_ERROR', err.message);
+      }
+    });
+  },
+
   clearErrors({LocalState}) {
     return LocalState.set('CREATE_COMMENT_ERROR', null);
   }

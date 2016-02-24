@@ -23,6 +23,14 @@ export default function () {
   Meteor.publish('posts.comments', function (postId) {
     check(postId, String);
     const selector = {postId};
+    const options = {
+      fields: {_id: 1, title: 1, createdAt: 1, text: 1, author: 1, likeCount: 1, saving: 1},
+      sort: {createdAt: -1},
+      limit: 25
+    };
+
     return Comments.find(selector);
+    //return Comments.find(selector, options);
+
   });
 }

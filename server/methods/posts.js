@@ -38,6 +38,23 @@ export default function () {
   });
 
   Meteor.methods({
+    'comments.like'(id) {
+      check(id, String);
+      const userId = Meteor.userId();
+      // XXX: Do some user authorization
+      let obj = {}
+      obj['likes'] = {}
+      obj['likes'][userId] = true;
+      console.log(`push obj: ${JSON.stringify(obj)}`);
+      Comments.update(id, {"$set": obj})
+      obj = {}
+      obj['likeCount'] = 1
+      //console.log(`set obj: ${JSON.stringify(obj)}`);
+      Comments.update(id, {"$inc": obj})
+    }
+  });
+
+  Meteor.methods({
     'posts.createComment'(_id, postId, text) {
       check(_id, String);
       check(postId, String);

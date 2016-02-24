@@ -16,7 +16,13 @@ export const composer = ({context, clearErrors, postId}, onData) => {
   }
 };
 
+export const depsMapper = (context, actions) => ({
+  like: actions.comments.like,
+  clearErrors: actions.comments.clearErrors,
+  context: () => context
+});
+
 export default composeAll(
   composeWithTracker(composer),
-  useDeps()
+  useDeps(depsMapper)
 )(Component);

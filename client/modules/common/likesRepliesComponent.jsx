@@ -13,7 +13,8 @@ class LikesReplies extends React.Component {
 
   likePost() {
     const {like, post} = this.props;
-    //console.log("like " + actions)
+    //console.log("props " + this.props.keys())
+    console.log("props " + this.props.like)
     like(post._id);
   }
 
