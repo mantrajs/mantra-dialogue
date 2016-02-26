@@ -30,6 +30,7 @@
   "dependencies": {
     "classnames": "2.2.1",
     "domready": "^1.0.8",
+    "draft-js": "^0.1.0",
     "formsy-react": "0.17.0",
     "formsy-react-components": "0.6.6",
     "linkify": "^0.2.1",

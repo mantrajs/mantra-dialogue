@@ -1,6 +1,22 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+//import {Editor, EditorState} from 'draft-js';
+import RichEditor from './RichEditor.jsx';
 
 class NewPost extends React.Component {
+  //onChange(editorState) {
+  //  this.setState({editorState});
+  //}
+
+  constructor(props) {
+    super(props);
+    this.state = {editorState: EditorState.createEmpty()};
+
+    this.focus = () => this.refs.editor.focus();
+    this.onChange = (editorState) => this.setState({editorState});
+    this.logState = () => console.log(this.state.editorState.toJS());
+  }
+
   render() {
     const {error} = this.props;
     return (
@@ -9,7 +25,8 @@ class NewPost extends React.Component {
         {error ? <p style={{color: 'red'}}>{error}</p> : null}
 
         <input style={{ padding: 0, margin: 0, width:'100%' }} ref="titleRef" type="Text" placeholder="Enter your post title." /> <br/>
-        <textarea style={{ padding: 0, margin: 0, width:'100%' }} rows="7" ref="contentRef" placeholder="Enter your post content." /> <br/>
+        <RichEditor ref="contentRef" /> <br/>
+
         <button onClick={this.createPost.bind(this)}>Add New</button>
       </div>
     );
@@ -19,7 +36,10 @@ class NewPost extends React.Component {
     const {create} = this.props;
     const {titleRef, contentRef} = this.refs;
 
-    create(titleRef.value, contentRef.value);
+    const rawState = contentRef.getRawState();
+    console.log("raw: " + JSON.stringify(rawState))
+
+    create(titleRef.value, JSON.stringify(rawState));
   }
 }
 
