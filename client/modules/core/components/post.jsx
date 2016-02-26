@@ -1,8 +1,7 @@
 import React from 'react';
 import CommentList from '/client/modules/comments/containers/comment_list.js';
 import LikesReplies from '../../common/likesRepliesComponent.jsx'
-//import linkify from 'linkify';
-//import linkifyHtml from 'linkify/html';
+import RichEditor from './RichEditor.jsx';
 
 class Post extends React.Component {
 
@@ -13,7 +12,7 @@ class Post extends React.Component {
       {post.saving ? <p>Saving...</p> : null}
       <h2>{post.title}</h2>
       <p>
-        {post.content}
+        <RichEditor rawContent={JSON.parse(post.content)} readOnly="true"/>
       </p>
         <LikesReplies {...this.props} />
       <div>

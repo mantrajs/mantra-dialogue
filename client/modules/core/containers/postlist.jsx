@@ -1,6 +1,7 @@
 import React from 'react';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 import moment from 'moment';
+import RichEditor from '../components/RichEditor.jsx';
 
 const PostList = ({posts}) => {
   return (
@@ -17,15 +18,18 @@ const PostList = ({posts}) => {
             else {
             author = 'Anonymous';
             };
+          let rawContent = null;
+          try {
+            rawContent = JSON.parse(post.content)
+            } catch (e) {
+            }
+          console.log("error parse " + (rawContent && "yes"))
           return(
           <div className="post-preview">
             <a href={`/post/${post._id}`}>
               <h2 className="post-title">
                 {post.title}
               </h2>
-              <h3 className="post-subtitle">
-                {content}
-              </h3>
             </a>
             <p className="post-meta">Posted by <a href="#">{author}</a> ({moment(post.createdAt).fromNow(false)}) </p>
           </div>
@@ -36,6 +40,10 @@ const PostList = ({posts}) => {
     </div>
   );
 }
+
+//<p>
+//  {rawContent && <RichEditor rawContent={rawContent} readOnly="true"/>}
+//</p>
 
 export const composer = ({context}, onData) => {
   const {Meteor, Collections} = context();

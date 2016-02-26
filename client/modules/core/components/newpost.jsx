@@ -4,18 +4,6 @@ import ReactDOM from 'react-dom';
 import RichEditor from './RichEditor.jsx';
 
 class NewPost extends React.Component {
-  //onChange(editorState) {
-  //  this.setState({editorState});
-  //}
-
-  constructor(props) {
-    super(props);
-    this.state = {editorState: EditorState.createEmpty()};
-
-    this.focus = () => this.refs.editor.focus();
-    this.onChange = (editorState) => this.setState({editorState});
-    this.logState = () => console.log(this.state.editorState.toJS());
-  }
 
   render() {
     const {error} = this.props;

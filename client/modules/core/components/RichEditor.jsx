@@ -64,7 +64,8 @@ class RichEditor extends React.Component {
 
     return (
       <div className="RichEditor-root">
-        <BlockStyleControls
+        {!this.props.readOnly && <div>
+          <BlockStyleControls
           editorState={editorState}
           onToggle={this.toggleBlockType}
         />
@@ -72,6 +73,7 @@ class RichEditor extends React.Component {
           editorState={editorState}
           onToggle={this.toggleInlineStyle}
         />
+          </div>}
         <div className={className} onClick={this.focus}>
           <Editor
             blockStyleFn={getBlockStyle}
@@ -82,6 +84,7 @@ class RichEditor extends React.Component {
             placeholder="Tell a story..."
             ref="editor"
             spellCheck={true}
+            readOnly={this.props.readOnly}
           />
         </div>
       </div>
